@@ -26,7 +26,6 @@ public class Forum implements Serializable {
     private String description ;
 
     @OneToMany(mappedBy = "forum",cascade = CascadeType.ALL)
-    @JsonIgnore
     Set<Post> posts;
 
 }

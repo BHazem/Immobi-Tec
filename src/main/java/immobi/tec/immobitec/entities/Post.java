@@ -39,6 +39,5 @@ public class Post implements Serializable {
     private Forum forum;
 
     @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
-    @JsonIgnore
     Set<Comment> comments;
 }
