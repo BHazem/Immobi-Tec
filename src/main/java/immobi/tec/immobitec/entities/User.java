@@ -41,11 +41,9 @@ public class User implements Serializable {
     Set<Auction> auctionscreator;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
     private Role role;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
     private Adresse adresse;
 
 
