@@ -17,13 +17,11 @@ import java.util.Set;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Order implements Serializable {
+public class Ordre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_order;
-
     private float total_price ;
-
     @Temporal(TemporalType.DATE)
     private Date order_date ;
 

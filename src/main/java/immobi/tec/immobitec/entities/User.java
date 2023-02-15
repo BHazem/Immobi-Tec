@@ -70,7 +70,7 @@ public class User implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JsonIgnore
-    Set<Order> orders;
+    Set<Ordre> orders;
 
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
