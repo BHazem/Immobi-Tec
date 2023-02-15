@@ -8,7 +8,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 
@@ -31,6 +30,6 @@ public class Card implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private Order order;
+    private Ordre order;
 
 }
