@@ -34,9 +34,11 @@ public class Property implements Serializable {
     private User user;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Announcement announcement;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Adresse adresse;
 
     @OneToMany(cascade = CascadeType.ALL)
