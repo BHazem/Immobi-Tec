@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
@@ -17,6 +18,7 @@ import java.util.Set;
 @Setter
 @ToString
 @NoArgsConstructor
+@Transactional
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

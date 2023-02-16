@@ -35,8 +35,5 @@ public class UserServiceImp implements IUserService {
         return userRepository.save(user);
     }
 
-    @Override
-    public void deleteUser(int id) {
-        userRepository.deleteById(id);
-    }
+
 }

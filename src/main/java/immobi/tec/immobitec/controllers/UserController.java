@@ -46,9 +46,8 @@ public class UserController {
 
     @DeleteMapping("/deleteUser/{id}")
     public void deleteUser(@PathVariable("id") int id){
-        User user= userRepository.findById(id).orElse(null);
-        adresseRepository.deleteById(user.getId_user());
-        iUserService.deleteUser(id);
+
+        userRepository.DeleteUser(id);
 
     }
 
