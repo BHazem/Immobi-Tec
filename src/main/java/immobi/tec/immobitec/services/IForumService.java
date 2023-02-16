@@ -17,5 +17,5 @@ public interface IForumService {
 
     public void deleteForum(int id);
 
-    public List<Post> getAllPosts();
+    public List<Post> getAllPosts(int id);
 }

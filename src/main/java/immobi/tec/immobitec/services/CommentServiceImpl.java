@@ -12,6 +12,7 @@ import java.util.List;
 public class CommentServiceImpl implements ICommentService{
     CommentRepository commentRepository;
 
+
     @Override
     public Comment getCommentById(int id) {
         return commentRepository.findById(id).orElse(null);
@@ -29,7 +30,6 @@ public class CommentServiceImpl implements ICommentService{
 
     @Override
     public Comment addCommentToPost(Comment c, int id) {
-
         commentRepository.save(c);
         return c;
     }

@@ -6,6 +6,7 @@ import immobi.tec.immobitec.repositories.ForumRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -39,7 +40,8 @@ public class ForumServiceImpl implements IForumService {
     }
 
     @Override
-    public List<Post> getAllPosts() {
-        return null;
+    public List<Post> getAllPosts(int id) {
+        Forum f=forumRepository.findById(id).orElse(null);
+        return (List<Post>) f.getPosts();
     }
 }
