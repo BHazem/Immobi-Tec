@@ -10,7 +10,7 @@
     </parent>
     <groupId>Immobi.Tec</groupId>
     <artifactId>Immobi-Tec</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <name>Immobi-Tec</name>
     <description>Immobi-Tec</description>
     <properties>
