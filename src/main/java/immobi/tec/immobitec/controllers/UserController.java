@@ -2,7 +2,7 @@ package immobi.tec.immobitec.controllers;
 
 import immobi.tec.immobitec.entities.Adresse;
 import immobi.tec.immobitec.entities.Role;
-import immobi.tec.immobitec.entities.User;
+import immobi.tec.immobitec.entities.AppUser;
 import immobi.tec.immobitec.repositories.AdresseRepository;
 import immobi.tec.immobitec.repositories.UserRepository;
 import immobi.tec.immobitec.services.IRoleService;
@@ -21,18 +21,18 @@ public class UserController {
     private final UserRepository userRepository;
 
     @GetMapping("/getAllUsers")
-    public List<User> getAllUsers(){
+    public List<AppUser> getAllUsers(){
         return  iUserService.getAllUsers();
     }
 
     @GetMapping("/getAllAdress")
-        public List<Adresse> getAllAdress(){
+    public List<Adresse> getAllAdress(){
         return  adresseRepository.findAll();
     }
 
     @PostMapping("/addUser/{RoleId}")
     @ResponseBody
-    public User addUser(@RequestBody User user,@PathVariable("RoleId") int id){
+    public AppUser addUser(@RequestBody AppUser user,@PathVariable("RoleId") int id){
         Role role=iRoleService.getRoleById(id);
         user.setRole(role);
         return iUserService.addUser(user);
@@ -40,7 +40,7 @@ public class UserController {
 
     @PutMapping("/updateUser")
     @ResponseBody
-    public User updateUser(@RequestBody User user){
+    public AppUser updateUser(@RequestBody AppUser user){
         return iUserService.updateUser(user);
     }
 
@@ -52,7 +52,7 @@ public class UserController {
     }
 
     @GetMapping("/getUserById/{id}")
-    public User getUserByID(@PathVariable("id") int id){
+    public AppUser getUserByID(@PathVariable("id") int id){
         return iUserService.getUserById(id);
     }
 }

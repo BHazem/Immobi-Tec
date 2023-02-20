@@ -32,7 +32,7 @@ public class Post implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private User user;
+    private AppUser user;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore

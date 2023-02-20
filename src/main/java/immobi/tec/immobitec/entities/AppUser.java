@@ -19,7 +19,8 @@ import java.util.Set;
 @ToString
 @NoArgsConstructor
 @Transactional
-public class User implements Serializable {
+@Table(name = "User")
+public class AppUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_user;

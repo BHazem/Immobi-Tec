@@ -1,7 +1,6 @@
 package immobi.tec.immobitec.controllers;
 
 import immobi.tec.immobitec.entities.Role;
-import immobi.tec.immobitec.entities.User;
 import immobi.tec.immobitec.services.IRoleService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
