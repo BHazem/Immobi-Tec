@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+## DOCKER DB##
+/local_data_save/*
