@@ -27,7 +27,7 @@ public class Property implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private TypeProperty type ;
-    private String Picture;
+
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
@@ -45,6 +45,8 @@ public class Property implements Serializable {
     @JsonIgnore
     Set<Appointement> appointements;
 
-    // Rendez vous
+    @OneToMany(mappedBy = "property",cascade = CascadeType.ALL)
+    @JsonIgnore
+    Set<ImageProperty> images;
 
 }
