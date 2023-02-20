@@ -8,7 +8,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 
@@ -30,7 +29,7 @@ public class Service implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private User user;
+    private AppUser user;
 
     @OneToMany(mappedBy = "service",cascade = CascadeType.ALL)
     @JsonIgnore

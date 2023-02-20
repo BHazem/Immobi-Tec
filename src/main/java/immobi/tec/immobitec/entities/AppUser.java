@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
@@ -17,7 +18,9 @@ import java.util.Set;
 @Setter
 @ToString
 @NoArgsConstructor
-public class User implements Serializable {
+@Transactional
+@Table(name = "User")
+public class AppUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_user;
@@ -41,11 +44,9 @@ public class User implements Serializable {
     Set<Auction> auctionscreator;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
     private Role role;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
     private Adresse adresse;
 
 

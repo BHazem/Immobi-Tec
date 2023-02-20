@@ -8,7 +8,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 
@@ -28,12 +27,12 @@ public class DormRoom implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private User user;
+    private AppUser user;
 
 
     @ManyToMany(mappedBy = "dormRoomsCustomer",cascade = CascadeType.ALL)
     @JsonIgnore
-    Set<User> users;
+    Set<AppUser> users;
 
 
     @OneToOne(cascade = CascadeType.ALL)

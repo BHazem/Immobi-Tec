@@ -8,8 +8,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 
@@ -28,5 +26,5 @@ public class Role implements Serializable {
 
     @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
     @JsonIgnore
-    Set<User> users;
+    Set<AppUser> users;
 }
