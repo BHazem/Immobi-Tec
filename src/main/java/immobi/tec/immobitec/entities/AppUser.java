@@ -33,7 +33,7 @@ public class AppUser implements Serializable {
     private Date birthday ;
     private int phoneNumber ;
     private float wallet ;
-    private String Picture ;
+    private String picture ;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JsonIgnore
