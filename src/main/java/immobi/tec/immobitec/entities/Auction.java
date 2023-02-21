@@ -33,10 +33,10 @@ public class Auction implements Serializable {
 
     @ManyToMany(mappedBy = "auctionsParticipation",cascade = CascadeType.ALL)
     @JsonIgnore
-    Set<User> users;
+    Set<AppUser> users;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private User user;
+    private AppUser user;
 
 }

@@ -32,13 +32,12 @@ public class Post implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private User user;
+    private AppUser user;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
     private Forum forum;
 
     @OneToMany(mappedBy = "post",cascade = CascadeType.ALL)
-    @JsonIgnore
     Set<Comment> comments;
 }

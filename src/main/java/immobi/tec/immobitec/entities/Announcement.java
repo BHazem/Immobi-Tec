@@ -1,5 +1,6 @@
 package immobi.tec.immobitec.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -26,7 +28,13 @@ public class Announcement implements Serializable {
     @Enumerated(EnumType.STRING)
     private TypeAnnouncement type ;
 
+    private float ratmoyenne;
+
     @OneToOne(mappedBy = "announcement",cascade = CascadeType.ALL)
     private Property property;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
+    Set<Rating> ratings;
 
 }

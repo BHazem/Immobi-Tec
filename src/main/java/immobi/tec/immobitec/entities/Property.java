@@ -8,7 +8,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.Set;
 
 
@@ -27,22 +26,26 @@ public class Property implements Serializable {
 
     @Enumerated(EnumType.STRING)
     private TypeProperty type ;
-    private String Picture;
+
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    private User user;
+    private AppUser user;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Announcement announcement;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Adresse adresse;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JsonIgnore
     Set<Appointement> appointements;
 
-    // Rendez vous
+    @OneToMany(mappedBy = "property",cascade = CascadeType.ALL)
+    @JsonIgnore
+    Set<ImageProperty> images;
 
 }

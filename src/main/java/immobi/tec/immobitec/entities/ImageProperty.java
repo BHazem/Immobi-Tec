@@ -8,23 +8,21 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
-
 
 @Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
-public class Role implements Serializable {
+public class ImageProperty implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Role;
+    private int id_image;
 
-    private String name ;
-    private String function ;
+    private String Url ;
 
-    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JsonIgnore
-    Set<AppUser> users;
+    private Property property;
+
 }
