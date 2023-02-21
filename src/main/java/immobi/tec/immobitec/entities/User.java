@@ -90,6 +90,10 @@ public class User implements Serializable {
     @JsonIgnore
     Set<Post> posts;
 
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
+    Set<Mise> mises;
+
+
 
 
 }

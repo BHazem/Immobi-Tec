@@ -39,4 +39,7 @@ public class Auction implements Serializable {
     @JsonIgnore
     private User user;
 
+    @OneToMany(mappedBy = "auction",fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
+    Set<Mise> mises;
+
 }
